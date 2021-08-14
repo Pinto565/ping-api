@@ -14,7 +14,7 @@ status = {
 }
 
 def pinghost(host):
-    cmd = f"ping {host} -c 2"
+    cmd = f"ping {host} -c 1"
     result = subprocess.run(cmd,shell=True,capture_output=True,text=True)
     result_text =  (result.stdout)
 
