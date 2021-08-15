@@ -6,7 +6,7 @@ def time():
     return update_time
 
 
-hosts = ["google.com","github.com","192.168.1.105"]
+hosts = ["opencloud@vpn.pattarai.in","github.com","192.168.1.105"]
 
 status = {
     "updated time" : time() , 
