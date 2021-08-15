@@ -1,9 +1,11 @@
 import subprocess
 import os
 from datetime import datetime
+import pytz
 
 def time():
-    update_time = (datetime.now())
+    IST = pytz.timezone('Asia/Kolkata')
+    update_time = (datetime.now(IST).strftime('%Y:%m:%d %H:%M:%S %Z %z'))
     return update_time
 
 
