@@ -26,6 +26,8 @@ def pinghost(host):
         return "offline"
     elif "Destination Host Unreachable" in result_text:
         return "offline"
+    elif "Name or service not known" or "could not find host" in result_text:
+        return "offline"
     else:
         return "online"
 
@@ -33,7 +35,10 @@ def update_status():
     status["device status"] = []
     status["updated time"] = time()
     for host in hosts.split(" "):
-        ip_addr = socket.gethostbyname(host)
+        try:
+            ip_addr = socket.gethostbyname(host)
+        except:
+            ip_addr = "Host Not Found"
         devicestatus = {
             "host" : host ,
             "ip address" : ip_addr ,
