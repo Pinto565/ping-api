@@ -6,7 +6,7 @@ import socket
 
 def time():
     IST = pytz.timezone('Asia/Kolkata')
-    update_time = (datetime.now(IST).strftime('%Y:%m:%d %H:%M:%S %Z %z'))
+    update_time = (datetime.now(IST).strftime('%Y:%m:%d %H:%M:%S %Z %z')).replace(" +0530","")
     return update_time
 
 
