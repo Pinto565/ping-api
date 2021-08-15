@@ -10,7 +10,7 @@ def time():
     return update_time
 
 
-hosts = os.environ["HOSTS"]  #"vpn.opencloud.pattarai.in"
+hosts =  os.environ["HOSTS"]  #"vpn.opencloud.pattarai.in"
 
 status = {
     "updated time" : time() , 
