@@ -1,6 +1,5 @@
 import subprocess
 import os
-from devices import *
 from datetime import datetime
 
 def time():
