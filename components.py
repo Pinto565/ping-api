@@ -1,5 +1,6 @@
 import subprocess
 import os
+from devices import *
 from datetime import datetime
 
 def time():
@@ -7,7 +8,7 @@ def time():
     return update_time
 
 
-hosts = os.environ["HOSTS"]
+hosts = device
 
 status = {
     "updated time" : time() , 
