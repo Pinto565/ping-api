@@ -8,7 +8,7 @@ def time():
     return update_time
 
 
-hosts = device
+hosts = os.environ("HOSTS")
 
 status = {
     "updated time" : time() , 
@@ -30,7 +30,7 @@ def pinghost(host):
 def update_status():
     status["device status"] = []
     status["updated time"] = time()
-    for host in hosts:
+    for host in hosts.split(" "):
         devicestatus = {
             "host address" : host,
             "status" : pinghost(host)
