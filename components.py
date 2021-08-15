@@ -7,7 +7,7 @@ def time():
     return update_time
 
 
-hosts = os.environ("HOSTS")
+hosts = os.environ["HOSTS"]
 
 status = {
     "updated time" : time() , 
