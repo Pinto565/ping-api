@@ -33,7 +33,7 @@ def update_status():
     status["updated time"] = time()
     for host in hosts.split(" "):
         devicestatus = {
-            "host address" : host,
+            "host" : host,
             "status" : pinghost(host)
         }
         status["device status"].append(devicestatus)
