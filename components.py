@@ -1,4 +1,5 @@
 import subprocess
+import os
 from datetime import datetime
 
 def time():
@@ -6,7 +7,7 @@ def time():
     return update_time
 
 
-hosts = ["opencloud@vpn.pattarai.in","github.com","192.168.1.105"]
+hosts = os.environ["HOSTS"]
 
 status = {
     "updated time" : time() , 
