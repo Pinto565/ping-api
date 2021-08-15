@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/api")
+@app.route("/status")
 def api():
     update_status()
     return jsonify(status)
