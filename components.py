@@ -2,6 +2,7 @@ import subprocess
 import os
 from datetime import datetime
 import pytz
+import socket
 
 def time():
     IST = pytz.timezone('Asia/Kolkata')
@@ -34,6 +35,7 @@ def update_status():
     for host in hosts.split(" "):
         devicestatus = {
             "host" : host,
+            "ip address" : socket.gethostbyname(host),
             "status" : pinghost(host)
         }
         status["device status"].append(devicestatus)
