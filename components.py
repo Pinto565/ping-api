@@ -10,7 +10,7 @@ def time():
     return update_time
 
 
-hosts = os.environ["HOSTS"]
+hosts = os.environ["HOSTS"]  #"vpn.opencloud.pattarai.in"
 
 status = {
     "updated time" : time() , 
@@ -33,9 +33,10 @@ def update_status():
     status["device status"] = []
     status["updated time"] = time()
     for host in hosts.split(" "):
+        ip_addr = socket.gethostbyname(host)
         devicestatus = {
-            "host" : host,
-            "ip address" : socket.gethostbyname(host),
+            "host" : host ,
+            "ip address" : ip_addr ,
             "status" : pinghost(host)
         }
         status["device status"].append(devicestatus)
