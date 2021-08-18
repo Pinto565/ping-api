@@ -13,8 +13,8 @@ def time():
 hosts =  os.environ["HOSTS"]  #"vpn.opencloud.pattarai.in"
 
 status = {
-    "updated time" : time() , 
-    "device status" : []
+    "updated_time" : time() , 
+    "device_status" : []
 }
 
 def pinghost(host):
@@ -30,21 +30,21 @@ def pinghost(host):
         return "online"
 
 def update_status():
-    status["device status"] = []
-    status["updated time"] = time()
+    status["device_status"] = []
+    status["updated_time"] = time()
     for host in hosts.split(" "):
         try:
             ip_addr = socket.gethostbyname(host)
             devicestatus = {
             "host" : host ,
-            "ip address" : ip_addr ,
+            "ip_address" : ip_addr ,
             "status" : pinghost(host)
         }
         except:
             ip_addr = "Host Not Found"
             devicestatus = {
             "host" : host ,
-            "ip address" : ip_addr ,
+            "ip_address" : ip_addr ,
             "status" : "offline"
         }
-        status["device status"].append(devicestatus)
+        status["device_status"].append(devicestatus)
